@@ -118,7 +118,7 @@ Run the backend test suite with `pip install -r requirements-dev.txt` followed b
 2. In Render, create a **Web Service** from that repository and select **Docker** as the runtime.
 3. Deploy the default branch. The Dockerfile builds the frontend, installs the backend and starts Uvicorn on `0.0.0.0` using Render's `PORT` value.
 
-The application uses one service and no database. Prediction history is held in browser local storage and is specific to that browser. Render Free may spin down after inactivity, so the first request after idle time can take longer while the service starts.
+The application uses one service and no database. Individual and bulk prediction histories are stored in separate browser local storage keys and are specific to that browser. Existing mixed history is split by its recorded single or bulk row markers on first load. Render Free may spin down after inactivity, so the first request after idle time can take longer while the service starts.
 
 ## Future improvements
 
